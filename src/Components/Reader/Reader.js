@@ -5,8 +5,6 @@ import Counter from '../Counter';
 import Publication from '../Publication';
 
 export default class Reader extends Component {
-  static defaultProps = {};
-
   static propTypes = {
     items: T.arrayOf(
       T.shape({
@@ -33,7 +31,7 @@ export default class Reader extends Component {
     const { items } = this.props;
     const { startIdx } = this.state;
     return (
-      <div className="reader">
+      <>
         <Controls
           curPos={startIdx}
           totalPub={items.length}
@@ -46,7 +44,7 @@ export default class Reader extends Component {
           title={items[startIdx].title}
           text={items[startIdx].text}
         />
-      </div>
+      </>
     );
   }
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 import T from 'prop-types';
+import styles from './Counter.module.css';
 
-const Counter = ({ curPos, totalPub }) => {
+export default function Counter({ curPos, totalPub }) {
   return (
-    <p className="counter">
+    <p className={styles.counter}>
       {curPos + 1}/{totalPub}
     </p>
   );
-};
-export default Counter;
+}
 Counter.propTypes = {
   curPos: T.number.isRequired,
   totalPub: T.number.isRequired,

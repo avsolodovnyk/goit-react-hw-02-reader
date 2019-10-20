@@ -1,13 +1,19 @@
 import React from 'react';
 import T from 'prop-types';
+import styles from './Controls.module.css';
 
-const Controls = ({ curPos, totalPub, onNextClick, onPrevClick }) => {
+export default function Controls({
+  curPos,
+  totalPub,
+  onNextClick,
+  onPrevClick,
+}) {
   return (
-    <section className="controls">
+    <section className={styles.controls}>
       <button
         type="button"
         onClick={onPrevClick}
-        className="button"
+        className={styles.button}
         disabled={curPos === 0}
       >
         Назад
@@ -15,15 +21,15 @@ const Controls = ({ curPos, totalPub, onNextClick, onPrevClick }) => {
       <button
         type="button"
         onClick={onNextClick}
-        className="button"
+        className={styles.button}
         disabled={curPos === totalPub - 1}
       >
         Вперед
       </button>
     </section>
   );
-};
-export default Controls;
+}
+
 Controls.propTypes = {
   curPos: T.number.isRequired,
   totalPub: T.number.isRequired,

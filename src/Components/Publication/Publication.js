@@ -1,15 +1,15 @@
 import React from 'react';
 import T from 'prop-types';
+import styles from './Publication.module.css';
 
-const Publication = ({ id, text, title }) => {
+export default function Publication({ id, text, title }) {
   return (
-    <article className="publication" id={id}>
+    <article className={styles.publication} id={id}>
       <h2>{title}</h2>
       <p>{text}</p>
     </article>
   );
-};
-export default Publication;
+}
 
 Publication.propTypes = {
   id: T.string.isRequired,
