@@ -17,19 +17,18 @@ export default class Reader extends Component {
 
   state = { startIdx: 0 };
 
-  handleNext = e => {
+  handleNext = () => {
     this.setState(prevState => ({ startIdx: prevState.startIdx + 1 }));
   };
 
-  handleBack = e => {
-    this.setState(prevState => {
-      return { startIdx: prevState.startIdx - 1 };
-    });
+  handleBack = () => {
+    this.setState(prevState => ({ startIdx: prevState.startIdx - 1 }));
   };
 
   render() {
     const { items } = this.props;
     const { startIdx } = this.state;
+    const currentItem = items[startIdx];
     return (
       <>
         <Controls
@@ -39,11 +38,7 @@ export default class Reader extends Component {
           onPrevClick={this.handleBack}
         />
         <Counter curPos={startIdx} totalPub={items.length} />
-        <Publication
-          id={items[startIdx].id}
-          title={items[startIdx].title}
-          text={items[startIdx].text}
-        />
+        <Publication currentItem={currentItem} />
       </>
     );
   }

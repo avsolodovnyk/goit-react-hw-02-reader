@@ -1,7 +1,6 @@
 {
   "name": "goit-react-hw-02-reader",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "clsx": "^1.0.4",
     "normalize.css": "^8.0.1",
@@ -46,5 +45,5 @@
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2"
   },
-  "homepage": "https://avsolodovnyk.github.io/goit-react-hw-01-components"
+  "homepage": "https://avsolodovnyk.github.io/goit-react-hw-02-reader"
 }
